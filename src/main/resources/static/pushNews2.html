@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>新闻推送</title>
+</head>
+<body>
+<h1>每日头条</h1>
+<div>
+    <div>
+        <h2>每日头条新闻实时看</h2>
+        <div style="color:#F00"><b><p id="realTimeNews"></p></b></div>
+    </div>
+    <hr>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+
+    longLoop();
+
+    function longLoop() {
+        $.get("realTimeNews2", function (data) {
+            console.log(data);
+            $("#realTimeNews").html(data);
+            longLoop();
+        })
+    }
+
+
+</script>
+</body>
+</html>
